@@ -15,7 +15,7 @@ Current Directory : /in28Minutes/git/spring-microservices-v2/03.microservices
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.1</version>
+		<version>3.0.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.in28minutes.microservices</groupId>
@@ -25,8 +25,8 @@ Current Directory : /in28Minutes/git/spring-microservices-v2/03.microservices
 	<description>Demo project for Spring Boot Centralized Configuration</description>
 
 	<properties>
-		<java.version>15</java.version>
-		<spring-cloud.version>2020.0.0</spring-cloud.version>
+		<java.version>17</java.version>
+		<spring-cloud.version>2022.0.0-RC3</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -302,7 +302,7 @@ limits-service.maximum=996
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.1</version>
+		<version>3.0.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.in28minutes.microservices</groupId>
@@ -312,8 +312,8 @@ limits-service.maximum=996
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<java.version>15</java.version>
-		<spring-cloud.version>2020.0.0</spring-cloud.version>
+		<java.version>17</java.version>
+		<spring-cloud.version>2022.0.0-RC3</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -438,6 +438,7 @@ server.port=8000
 
 spring.jpa.show-sql=true
 spring.datasource.url=jdbc:h2:mem:testdb
+spring.jpa.defer-datasource-initialization=true
 spring.h2.console.enabled=true
 ```
 ---
@@ -590,7 +591,7 @@ public class CurrencyExchangeController {
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.1</version>
+		<version>3.0.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.in28minutes.microservices</groupId>
@@ -600,8 +601,8 @@ public class CurrencyExchangeController {
 	<description>Centralized Configuration Server</description>
 
 	<properties>
-		<java.version>15</java.version>
-		<spring-cloud.version>2020.0.0</spring-cloud.version>
+		<java.version>17</java.version>
+		<spring-cloud.version>2022.0.0-RC3</spring-cloud.version>
 	</properties>
 
 	<dependencies>

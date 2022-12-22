@@ -15,7 +15,7 @@ Current Directory : /Ranga/git/01.udemy-course-repos/spring-microservices-v2/03.
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.1</version>
+		<version>3.0.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.in28minutes.microservices</groupId>
@@ -25,8 +25,8 @@ Current Directory : /Ranga/git/01.udemy-course-repos/spring-microservices-v2/03.
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<java.version>15</java.version>
-		<spring-cloud.version>2020.0.0</spring-cloud.version>
+		<java.version>17</java.version>
+		<spring-cloud.version>2022.0.0-RC3</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -47,15 +47,15 @@ Current Directory : /Ranga/git/01.udemy-course-repos/spring-microservices-v2/03.
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-sleuth</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bridge-brave</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>io.zipkin.reporter2</groupId>
+            <artifactId>zipkin-reporter-brave</artifactId>
+        </dependency>
 
 		<dependency>
 			<groupId>org.springframework.amqp</groupId>
@@ -97,6 +97,14 @@ Current Directory : /Ranga/git/01.udemy-course-repos/spring-microservices-v2/03.
 	</build>
 
 	<repositories>
+        <repository>
+            <id>netflix-candidates</id>
+            <name>Netflix Candidates</name>
+            <url>https://artifactory-oss.prod.netflix.net/artifactory/maven-oss-candidates</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
 		<repository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
@@ -242,7 +250,7 @@ class ApiGatewayApplicationTests {
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.1</version>
+		<version>3.0.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.in28minutes.microservices</groupId>
@@ -252,8 +260,8 @@ class ApiGatewayApplicationTests {
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<java.version>15</java.version>
-		<spring-cloud.version>2020.0.0</spring-cloud.version>
+		<java.version>17</java.version>
+		<spring-cloud.version>2022.0.0-RC3</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -278,16 +286,16 @@ class ApiGatewayApplicationTests {
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-openfeign</artifactId>
 		</dependency>
-		
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-sleuth</artifactId>
-		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bridge-brave</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>io.zipkin.reporter2</groupId>
+            <artifactId>zipkin-reporter-brave</artifactId>
+        </dependency>
 
 		<dependency>
 			<groupId>org.springframework.amqp</groupId>
@@ -330,6 +338,14 @@ class ApiGatewayApplicationTests {
 	</build>
 
 	<repositories>
+        <repository>
+            <id>netflix-candidates</id>
+            <name>Netflix Candidates</name>
+            <url>https://artifactory-oss.prod.netflix.net/artifactory/maven-oss-candidates</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
 		<repository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
@@ -589,7 +605,7 @@ class CurrencyConversionServiceApplicationTests {
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.1</version>
+		<version>3.0.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.in28minutes.microservices</groupId>
@@ -599,8 +615,8 @@ class CurrencyConversionServiceApplicationTests {
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<java.version>15</java.version>
-		<spring-cloud.version>2020.0.0</spring-cloud.version>
+		<java.version>17</java.version>
+		<spring-cloud.version>2022.0.0-RC3</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -626,17 +642,18 @@ class CurrencyConversionServiceApplicationTests {
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-sleuth</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-tracing-bridge-brave</artifactId>
+        </dependency>
 
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-sleuth-zipkin</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>io.zipkin.reporter2</groupId>
+            <artifactId>zipkin-reporter-brave</artifactId>
+        </dependency>
 
-		<dependency>
+
+        <dependency>
 			<groupId>org.springframework.amqp</groupId>
 			<artifactId>spring-rabbit</artifactId>
 		</dependency>
@@ -691,6 +708,14 @@ class CurrencyConversionServiceApplicationTests {
 	</build>
 
 	<repositories>
+        <repository>
+            <id>netflix-candidates</id>
+            <name>Netflix Candidates</name>
+            <url>https://artifactory-oss.prod.netflix.net/artifactory/maven-oss-candidates</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
 		<repository>
 			<id>spring-milestones</id>
 			<name>Spring Milestones</name>
@@ -752,9 +777,9 @@ package com.in28minutes.microservices.currencyexchangeservice;
 
 import java.math.BigDecimal;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 public class CurrencyExchange {
@@ -1014,7 +1039,7 @@ http://localhost:8765/currency-conversion-new/from/USD/to/INR/quantity/10
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.1</version>
+		<version>3.0.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.in28minutes.microservices</groupId>
@@ -1024,8 +1049,8 @@ http://localhost:8765/currency-conversion-new/from/USD/to/INR/quantity/10
 	<description>Demo project for Spring Boot Centralized Configuration</description>
 
 	<properties>
-		<java.version>15</java.version>
-		<spring-cloud.version>2020.0.0</spring-cloud.version>
+		<java.version>17</java.version>
+		<spring-cloud.version>2022.0.0-RC3</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -1253,7 +1278,7 @@ class LimitsServiceApplicationTests {
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.1</version>
+		<version>3.0.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.in28minutes.microservices</groupId>
@@ -1263,8 +1288,8 @@ class LimitsServiceApplicationTests {
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
-		<java.version>15</java.version>
-		<spring-cloud.version>2020.0.0</spring-cloud.version>
+		<java.version>17</java.version>
+		<spring-cloud.version>2022.0.0-RC3</spring-cloud.version>
 	</properties>
 
 	<dependencies>
@@ -1388,7 +1413,7 @@ class NamingServerApplicationTests {
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.4.1</version>
+		<version>3.0.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.in28minutes.microservices</groupId>
@@ -1398,8 +1423,8 @@ class NamingServerApplicationTests {
 	<description>Centralized Configuration Server</description>
 
 	<properties>
-		<java.version>15</java.version>
-		<spring-cloud.version>2020.0.0</spring-cloud.version>
+		<java.version>17</java.version>
+		<spring-cloud.version>2022.0.0-RC3</spring-cloud.version>
 	</properties>
 
 	<dependencies>
